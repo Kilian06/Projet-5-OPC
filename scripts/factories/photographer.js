@@ -4,11 +4,13 @@ function photographerFactory(data) {
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
-        const lienAccueil = document.createElement('a')
-        lienAccueil.setAttribute('href', id+".html")
+        const lien = document.createElement('a')
+        lien.setAttribute('href',"photographer.html" + "?id="+id)
+        lien.setAttribute('aria-label',name)
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
+        img.setAttribute("alt", "")
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
         const h3 = document.createElement('h3');
@@ -17,9 +19,9 @@ function photographerFactory(data) {
         h4.textContent = tagline;
         const h5 = document.createElement('h5');
         h5.textContent = price+ "€/jour";
-        article.appendChild(lienAccueil)
-        lienAccueil.appendChild(img);
-        lienAccueil.appendChild(h2);
+        article.appendChild(lien)
+        lien.appendChild(img);
+        lien.appendChild(h2);
         article.appendChild(h3);
         article.appendChild(h4);
         article.appendChild(h5);
