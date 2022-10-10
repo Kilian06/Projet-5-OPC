@@ -5,7 +5,7 @@ var url = new URLSearchParams(lien);
 var quelestlid = url.get('id');
 console.log(quelestlid)
 
-window.onload = async function getPhotographers() {
+window.onload = async function getMediaPhotographers() {
     return fetch(`../data/photographers.json`)
     .then(dataPhotographers => dataPhotographers.json())
     .then( dataPhotographersJson  => {
@@ -50,11 +50,55 @@ window.onload = async function getPhotographers() {
               }
             );
           }
-          
         var foundMedia = getMediaByCode(quelestlid);
         console.log(foundMedia)
 
 
+          /////////////////////////////////
+          function photoMediaprint(foundMedia) {
+            const { id, date, image, photographerId, like, price, title} = foundMedia;
+        
+            const pictureMedia = `assets/photographers/${image}`;
+        
+            function getUserMediaCardDOM() {
+                const lienMedia = document.createElement('a')
+                lien.setAttribute('href',"")
+                const img = document.createElement( 'img' );
+                img.setAttribute("src", pictureMedia)
+                img.setAttribute("alt", title)
+                const titleMedia = document.createElement( 'h2' );
+                titleMedia.textContent = title;
+                const likeMedia = document.createElement('h3');
+                likeMedia.textContent = like
+
+                lienMedia.appendChild(img);
+                lienMedia.appendChild(h2);
+                lienMedia.appendChild(h3);
+                return (lienMedia);
+            }
+            return { image, title, like, getUserMediaCardDOM }
+            
+        }
+
+
+        async function displayMedia(foundMedia) {
+            const photographersMedia = document.querySelector(".liste");
+    
+            foundMedia.forEach((id) => {
+                console.log("test")
+                const photographerMedia = photographerFactory(photographer);
+                const userMediaCardDOM = photographerMedia.getUserMediaCardDOM();
+                photographersMedia.appendChild(userMediaCardDOM);
+            });
+        };
+
+        async function initMedia() {
+            // Récupère les datas des photographes
+            const MediaPhotographersInit = await getMediaPhotographers();
+            displayMedia(MediaPhotographersInit);
+        };
+        
+        // initMedia();
     })
 }
 
