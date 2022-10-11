@@ -13,16 +13,9 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <div class="photograph-header_left">
-          <h1 class="photographer_page_name"></h1>
-            <div class="photographer_page_citycountry"></div>
-            <div class="photographer_page_tagline"></div>
-        </div>
+        
         <div class="photographer_page_contact">
           <button class="contact_button" onclick="displayModal()">Contactez-moi</button></div>
-        <div class="photographer_page-portrait">
-          <img class="photographer_page_portrait">
-        </div></div>
       </div>
     </main>
     <div id="contact_modal">
@@ -44,9 +37,11 @@
     </div>
 		</div>
     <div class="test">
-      <div id="list" class="liste">Photos</div>
+      <div id="list" class="liste"></div>
     </div>
     <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/factories/media.js"></script>
+    <script src="/scripts/factories/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

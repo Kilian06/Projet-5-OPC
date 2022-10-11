@@ -6,6 +6,7 @@
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
+  width: 100%;
 }
 
 header {
@@ -104,20 +105,46 @@ h1 {
   margin: auto;
 }
 
-.photographer_page-portrait {
+.photographer_page_portrait {
   width: 40%;
   text-align: right;
 }
 
-.photographer_page_portrait {
+.photographer_page_portrait img {
   height: 200px;
   width: 200px;
   object-fit: cover;
   border-radius: 100%;
 }
 
+.liste {
+  display: grid;
+  grid-template-columns: 28% 28% 28%;
+  grid-gap: 8%;
+  margin: 0 100px;
+}
+
+.vignette-media {
+  width: 100%;
+  margin: auto;
+}
+
+.vignette-media img {
+  height: 300px;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 #contact_modal {
   display: none;
+}
+
+.photograph-header_main {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .photograph-header {
@@ -125,9 +152,23 @@ h1 {
   padding: 50px;
   height: 200px;
   margin: 0 100px;
+}
+
+.photograph-header_location_tagline {
+  height: 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.photograph-header_location {
+  color: #901C1C;
+  font-size: x-large;
+}
+
+.photograph-header_tagline {
+  color: grey;
+  font-size: medium;
 }
 
 .contact_button {
