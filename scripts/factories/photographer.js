@@ -58,6 +58,8 @@ function photographerFactoryPage(data) {
         const imgPortait = document.createElement('img');
         imgPortait.setAttribute("src", picture);
         h1.setAttribute('class',"photographer_page_name");
+        const priceBot = document.getElementById("priceBot")
+        priceBot.textContent = price+ "€/jour";
         main.appendChild(left)
         main.appendChild(contact)
         main.appendChild(divPortait)
