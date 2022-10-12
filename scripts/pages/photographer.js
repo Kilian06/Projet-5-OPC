@@ -7,7 +7,7 @@ console.log(quelestlid)
 ///// Récupération des infos du photographe
 
 async function getPhotographers() {
-    return fetch(`../data/photographers.json`)
+    return fetch(`./data/photographers.json`)
     .then(dataPhotographers => dataPhotographers.json())
     .then( dataPhotographersJson  => {
         console.log(dataPhotographersJson);
@@ -59,7 +59,7 @@ init();
 ///// Récupération de la liste des medias
 
 async function getMediaPhotographers() {
-    return fetch(`../data/photographers.json`)
+    return fetch(`./data/photographers.json`)
     .then(dataPhotographers => dataPhotographers.json())
     .then( dataPhotographersJson  => {
         console.log(dataPhotographersJson);
