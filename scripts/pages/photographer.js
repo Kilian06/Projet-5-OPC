@@ -76,7 +76,7 @@ return MediaPhotographer;
 }
 
 async function displayDataMedia(media) {
-    const photographerList = document.getElementById("list");
+    const photographerList = document.getElementById("mediaList");
     media.forEach((media) => {
         console.log(media)
         const photographerMedia = MediaFactory(media);
