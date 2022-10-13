@@ -6,18 +6,26 @@ function MediaFactory(data) {
 
 
     function MediaCardDOM() {
-        const divMedia = document.createElement('div')
-        divMedia.setAttribute('class',"vignette-media")
+        const divMedia = document.createElement('div');
+        divMedia.setAttribute('class',"vignette-media");
+        const aImg = document.createElement('a');
+        aImg.setAttribute('class',"lien_vignette_media");
+
         if(image === undefined){
+            aImg.setAttribute("href", vid);
             const vidMedia = document.createElement( 'video' );
             vidMedia.setAttribute("src", vid);
             vidMedia.setAttribute("alt", "");
+            aImg.appendChild(divMedia);
             divMedia.appendChild(vidMedia);
         }else{
+            aImg.setAttribute("href", picture);
             const imgMedia = document.createElement( 'img' );
             imgMedia.setAttribute("src", picture);
             imgMedia.setAttribute("alt", "");
+            aImg.appendChild(divMedia);
             divMedia.appendChild(imgMedia);
+
         }
         const divMediaBot = document.createElement('div')
         divMediaBot.setAttribute('class',"vignette-media-bot")
@@ -31,7 +39,7 @@ function MediaFactory(data) {
         divMediaBot.appendChild(titleMedia);
         divMediaBot.appendChild(likeMedia);
 
-        return (divMedia);
+        return (aImg);
     }
     return {id, photographerId,image, video, vid, title, likes, date ,price, MediaCardDOM }
 

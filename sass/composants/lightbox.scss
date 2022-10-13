@@ -1,0 +1,80 @@
+.lightbox{
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    z-index: 1;
+    animation: lightboxIn 0.5s;
+}
+.lightbox.fadeout{
+    opacity: 0;
+}
+
+
+.lightbox__next, .lightbox__prev{
+    border: none;
+    background: url(/assets/icons/arrow.svg) center center / 100% no-repeat;
+    width: 42px;
+    height: 100%;
+    position: fixed;
+    top:0;
+    right: 0;
+    margin-top: -21px;
+    z-index: 2;
+    opacity: 0.5;
+    text-indent: -3000px;
+    cursor: pointer;
+    transition: 0.3s;
+&:hover{
+    opacity: 1;
+
+}
+}
+.lightbox__prev{ 
+     right: auto;
+     left:0;
+     transform: rotate(180deg);
+}
+
+.lightbox__close{
+    width: 42px;
+    height: 42px;
+    background: url(/assets/icons/close.svg) center center/ 42px no-repeat transparent;
+    border: none;
+    opacity: 0.5;
+    text-indent: -3000px;
+    cursor: pointer;
+    position: fixed;
+    transition: 0.3s;
+    z-index: 3;
+    top: 20px;
+    right:20px;
+    &:hover{
+        opacity: 1;
+    }
+}
+.lightbox__container img{
+    max-width: 90vw;
+    max-height: 95vh;
+}
+
+.lightbox__container video{
+    max-width: 90vw;
+    max-height: 95vh;
+}
+
+.lightbox__container{
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+@keyframes lightboxIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}

@@ -1,3 +1,6 @@
+import {Lightbox} from '../utils/slider.js';
+
+
 var lien = window.location.search
 var url = new URLSearchParams(lien);
 var quelestlid = url.get('id');
@@ -32,7 +35,6 @@ async function init() {
     const listePhotographersInit = await getPhotographers();
     displayData(listePhotographersInit);
 };
-
 
 
 init();
@@ -77,8 +79,11 @@ async function initMedia() {
     const likeBot = document.getElementById("likeBot")
     likeBot.textContent = likeCount;
     displayDataMedia(listeMediaInit);
+    Lightbox.init();
+
 };
 
 
 
 initMedia();
+
