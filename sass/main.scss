@@ -1,4 +1,5 @@
 @import "./utils/variable";
+@import "./composants/lightbox.scss";
 
 *{
     margin:0;
@@ -275,3 +276,7 @@ form input {
     overflow: auto;
     background-color: rgba(134, 134, 134, 0.4);
   }
+
+.lien_vignette_media{
+    text-decoration: none;
+}
