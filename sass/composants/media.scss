@@ -1,0 +1,24 @@
+@import "../utils/variable";
+
+.vignette-media{
+    width: 100%;
+    margin: auto;
+}
+
+.vignette-media img{
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.vignette-media video{
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.lien_vignette_media{
+    text-decoration: none;
+}

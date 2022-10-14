@@ -1,4 +1,5 @@
 import {Lightbox} from '../utils/slider.js';
+import {sortList} from '../utils/sort.js';
 
 
 var lien = window.location.search
@@ -69,21 +70,32 @@ async function displayDataMedia(media) {
 
 async function initMedia() {
     // Récupère les datas des photographes
+    document.getElementById("mediaList").innerHTML = ""
     const listeMediaInit = await getMediaPhotographers();
-    console.log(listeMediaInit);
+    const listeMediaInitSort =  sortList(listeMediaInit);
     let likeCount = 0;
     for(let i = 0; i < listeMediaInit.length; i++) {
         likeCount += listeMediaInit[i].likes;
     }
     console.log(likeCount);
     const likeBot = document.getElementById("likeBot")
+    const heart = document.createElement('i');
+    heart.setAttribute('class',"fa-solid fa-heart")
     likeBot.textContent = likeCount;
     displayDataMedia(listeMediaInit);
     Lightbox.init();
 
+
 };
 
 
+document.getElementById("mediasort").addEventListener('change', initMedia)
+
 
 initMedia();
+
+
+export {getMediaPhotographers}
+export {initMedia}
+
 

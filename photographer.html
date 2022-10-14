@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d16dd5992.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -14,9 +15,12 @@
     <main id="main">
       <div class="photograph-header">
         <div class="placeBot">
-          <div class="likeBot" id="likeBot">
-            Like
+          <div class="botLeft">
+            <div class="likeBot" id="likeBot">
+              Like
+            </div><i class="fa-solid fa-heart"></i>
           </div>
+
           <div class="priceBot" id="priceBot">
           </div>
     
@@ -56,8 +60,18 @@
 			</div>
     </div>
 		</div>
+    <script>
+    </script>
     <div class="shortby">
       Trier Par
+      <div class="custom-select">
+
+        <select id="mediasort" name="tirermedia">
+          <option value="title" class="select-dropdown__list-item" selected>Titre</option>
+          <option value="likes" class="select-dropdown__list-item">Popularité</option>
+          <option value="date" class="select-dropdown__list-item">Date</option>
+        </select>
+    </div>
     </div>
     <div class="grille_media">
       <div id="mediaList" class="liste"></div>
@@ -68,6 +82,8 @@
     <script src="scripts/factories/factophotographer.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
     <script src="scripts/utils/slider.js" type="module" defer></script>
+    <script src="scripts/utils/sort.js" type="module" ></script>
+    <script src="scripts/utils/select.js" type="module" ></script>
 
   </body>
 </html>

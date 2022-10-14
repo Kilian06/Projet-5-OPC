@@ -1,9 +1,9 @@
+
 function MediaFactory(data) {
     const {id, photographerId, image, video, title, likes, date ,price } = data;
 
     const picture = `assets/images/${image}`;
     const vid = `assets/images/${video}`;
-
 
     function MediaCardDOM() {
         const divMedia = document.createElement('div');
@@ -31,13 +31,19 @@ function MediaFactory(data) {
         divMediaBot.setAttribute('class',"vignette-media-bot")
         const titleMedia = document.createElement( 'div' );
         titleMedia.setAttribute('class',"vignette-media-title")
-        titleMedia.textContent = title;
+        titleMedia.textContent = title +" ";
+        const likeDiv = document.createElement( 'div' );
+        likeDiv.setAttribute('class',"vignette-likediv")
         const likeMedia = document.createElement( 'div' );
         likeMedia.setAttribute('class',"vignette-media-like")
         likeMedia.textContent = likes;
+        const heart = document.createElement('i');
+        heart.setAttribute('class',"fa-solid fa-heart")
         divMedia.appendChild(divMediaBot);
         divMediaBot.appendChild(titleMedia);
-        divMediaBot.appendChild(likeMedia);
+        divMediaBot.appendChild(likeDiv)
+        likeDiv.appendChild(likeMedia);
+        likeDiv.appendChild(heart);
 
         return (aImg);
     }

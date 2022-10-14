@@ -1,5 +1,8 @@
 @import "./utils/variable";
 @import "./composants/lightbox.scss";
+@import "./composants/media.scss";
+@import "./composants/select.scss";
+@import "./pages/photograher.scss";
 
 *{
     margin:0;
@@ -130,24 +133,7 @@ h1 {
 }
 
 
-.vignette-media{
-    width: 100%;
-    margin: auto;
-}
 
-.vignette-media img{
-    height: 300px;
-    width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.vignette-media video{
-    height: 300px;
-    width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-}
 
 #contact_modal {
     display: none;
@@ -252,18 +238,7 @@ form input {
     border-radius: 5px;
 }
 
-.placeBot{
-    position: fixed;
-    bottom: -5px;
-    right: 36px;
-    height: 68px;
-    width: 376px;
-    background-color: $colorsecond;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+
 
 .bground {
     display: none;
@@ -276,7 +251,3 @@ form input {
     overflow: auto;
     background-color: rgba(134, 134, 134, 0.4);
   }
-
-.lien_vignette_media{
-    text-decoration: none;
-}
