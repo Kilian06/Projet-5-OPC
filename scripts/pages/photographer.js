@@ -77,7 +77,6 @@ async function initMedia() {
     for(let i = 0; i < listeMediaInit.length; i++) {
         likeCount += listeMediaInit[i].likes;
     }
-    console.log(likeCount);
     const likeBot = document.getElementById("likeBot")
     const heart = document.createElement('i');
     heart.setAttribute('class',"fa-solid fa-heart")

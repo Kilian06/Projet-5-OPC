@@ -12,17 +12,17 @@ function MediaFactory(data) {
         aImg.setAttribute('class',"lien_vignette_media");
 
         if(image === undefined){
-            aImg.setAttribute("href", vid);
+            aImg.setAttribute("href", vid + "?title="+title);
             const vidMedia = document.createElement( 'video' );
             vidMedia.setAttribute("src", vid);
-            vidMedia.setAttribute("alt", "");
+            vidMedia.setAttribute("alt", title + ", closeup view");
             aImg.appendChild(divMedia);
             divMedia.appendChild(vidMedia);
         }else{
-            aImg.setAttribute("href", picture);
+            aImg.setAttribute("href", picture + "?title="+title);
             const imgMedia = document.createElement( 'img' );
             imgMedia.setAttribute("src", picture);
-            imgMedia.setAttribute("alt", "");
+            imgMedia.setAttribute("alt", title + ", closeup view");
             aImg.appendChild(divMedia);
             divMedia.appendChild(imgMedia);
 

@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.9);
+    background-color: rgba($color: #ffffff, $alpha: 0.95);
     z-index: 1;
     animation: lightboxIn 0.5s;
 }
@@ -17,7 +17,7 @@
 
 .lightbox__next, .lightbox__prev{
     border: none;
-    background: url(assets/icons/arrow.svg) center center / 100% no-repeat;
+    background: url(/assets/icons/arrow.svg) center center / 100% no-repeat;
     width: 42px;
     height: 100%;
     position: fixed;
@@ -25,12 +25,12 @@
     right: 0;
     margin-top: -21px;
     z-index: 2;
-    opacity: 0.5;
+    opacity: 0.9;
     text-indent: -3000px;
     cursor: pointer;
     transition: 0.3s;
 &:hover{
-    opacity: 1;
+    opacity: 0.5;
 
 }
 }
@@ -43,9 +43,9 @@
 .lightbox__close{
     width: 42px;
     height: 42px;
-    background: url(assets/icons/close.svg) center center/ 42px no-repeat transparent;
+    background: url(/assets/icons/close.svg) center center/ 42px no-repeat transparent;
     border: none;
-    opacity: 0.5;
+    opacity: 0.9;
     text-indent: -3000px;
     cursor: pointer;
     position: fixed;
@@ -54,7 +54,7 @@
     top: 20px;
     right:20px;
     &:hover{
-        opacity: 1;
+        opacity: 0.5;
     }
 }
 .lightbox__container img{
@@ -74,6 +74,12 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    flex-direction: column;
+    
+}
+
+.lightbox_title{
+    color: #901C1C;
 }
 
 @keyframes lightboxIn{
