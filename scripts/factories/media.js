@@ -16,6 +16,7 @@ function MediaFactory(data) {
             const vidMedia = document.createElement( 'video' );
             vidMedia.setAttribute("src", vid);
             vidMedia.setAttribute("alt", title + ", closeup view");
+            vidMedia.setAttribute("tabindex", "99");
             aImg.appendChild(divMedia);
             divMedia.appendChild(vidMedia);
         }else{
@@ -23,6 +24,7 @@ function MediaFactory(data) {
             const imgMedia = document.createElement( 'img' );
             imgMedia.setAttribute("src", picture);
             imgMedia.setAttribute("alt", title + ", closeup view");
+            imgMedia.setAttribute("tabindex", "99");
             aImg.appendChild(divMedia);
             divMedia.appendChild(imgMedia);
 

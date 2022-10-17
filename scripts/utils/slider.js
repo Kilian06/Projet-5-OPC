@@ -1,12 +1,9 @@
 
  class Lightbox {
     static init() {
+      
       const links = Array.from(document.querySelectorAll('.lien_vignette_media'));
       const gallery = links.map(link => link.getAttribute('href'));
-
-
-      var title = new URLSearchParams(window.location.search).get('title');
-
 
       links.forEach(link => link.addEventListener('click', e => {
           e.preventDefault()
@@ -20,7 +17,10 @@
       this.loadImage(url)
       this.onKeyUp = this.onKeyUp.bind(this)
       document.body.appendChild(this.element)
+      const blabla = document.querySelector(".grille_media")
+      blabla.setAttribute('aria-hidden',"true")
       document.addEventListener('keyup', this.onKeyUp)
+
     }
   
     loadImage (url) {
@@ -31,32 +31,33 @@
         var image = document.createElement("video")
         image.setAttribute('alt',"")
         image.setAttribute('controls',"")
-        image.setAttribute('id',"test")
+        image.setAttribute('id',"idImage")
+        image.setAttribute('aria-label',"testttt")
+        image.setAttribute('tabindex',"1")
+
         }
 
         else{
             var image = document.createElement("img")
-            image.setAttribute('alt', "")
-            image.setAttribute('id',"test")
+            image.setAttribute('id',"idImage")
+            image.setAttribute('aria-label',"testttt")
+            image.setAttribute('tabindex',"1")
+
         }
 
       const container = this.element.querySelector('.lightbox__container')
-
       container.innerHTML = ''
-
-    container.appendChild(image)
-        this.url = url
-
+      container.appendChild(image)
+      this.url = url
       image.src = url
       var titleUrl = image.src
-
       let params = (new URL(titleUrl)).searchParams;
-      let title = params.get('title'); // is the string "Jonathan Smith".
+      let title = params.get('title');
       var divTitle = document.createElement("div");
       divTitle.setAttribute('class', "lightbox_title")
       divTitle.textContent = title;
-      container.appendChild(divTitle)
-
+      container.appendChild(divTitle);
+      image.setAttribute('alt', title)
     }
   
     onKeyUp (e) {
@@ -99,10 +100,10 @@
     buildDOM(url) {
       const dom = document.createElement('div')
       dom.classList.add('lightbox')
-      dom.innerHTML = `<button class="lightbox__close" aria-label="Close dialog">Fermer</button>
-          <button class="lightbox__next" aria-label="Next Image">Suivant</button>
-          <button class="lightbox__prev" aria-label="Previous Image">Précédent</button>
-          <div class="lightbox__container" alt="image closeup view"></div>`
+      dom.innerHTML = `<button class="lightbox__close" aria-label="Close dialog" tabindex="4">Fermer</button>
+          <button class="lightbox__next" aria-label="Next Image" tabindex="3">Suivant</button>
+          <button class="lightbox__prev" aria-label="Previous Image" tabindex="2">Précédent</button>
+          <div class="lightbox__container" alt="image closeup view" id="lightboxContainer" tabindex="1"></div>`
       dom.querySelector('.lightbox__close').addEventListener('click', this.close.bind(this))
       dom.querySelector('.lightbox__next').addEventListener('click', this.next.bind(this))
       dom.querySelector('.lightbox__prev').addEventListener('click', this.prev.bind(this))

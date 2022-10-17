@@ -72,6 +72,7 @@ async function initMedia() {
     // Récupère les datas des photographes
     document.getElementById("mediaList").innerHTML = ""
     const listeMediaInit = await getMediaPhotographers();
+    console.log(listeMediaInit)
     const listeMediaInitSort =  sortList(listeMediaInit);
     let likeCount = 0;
     for(let i = 0; i < listeMediaInit.length; i++) {
@@ -84,11 +85,13 @@ async function initMedia() {
     displayDataMedia(listeMediaInit);
     Lightbox.init();
 
-
 };
 
-
+//ecoute du select pour le tri
 document.getElementById("mediasort").addEventListener('change', initMedia)
+
+//gestion du focus LightBox
+
 
 
 initMedia();
@@ -96,5 +99,8 @@ initMedia();
 
 export {getMediaPhotographers}
 export {initMedia}
+
+
+
 
 
