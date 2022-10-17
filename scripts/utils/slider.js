@@ -25,7 +25,6 @@
   
     loadImage (url) {
       this.url = null
-      
       // insertion if pour video ou image
       if(url.includes("mp4")) {
         var image = document.createElement("video")
@@ -34,17 +33,13 @@
         image.setAttribute('id',"idImage")
         image.setAttribute('aria-label',"testttt")
         image.setAttribute('tabindex',"1")
-
         }
-
         else{
             var image = document.createElement("img")
             image.setAttribute('id',"idImage")
             image.setAttribute('aria-label',"testttt")
             image.setAttribute('tabindex',"1")
-
         }
-
       const container = this.element.querySelector('.lightbox__container')
       container.innerHTML = ''
       container.appendChild(image)
@@ -72,6 +67,9 @@
   
     close (e) {
       e.preventDefault()
+      var focusgrille = document.getElementById(pipi)
+      focusgrille.focus()
+      console.log(pipi)
       this.element.classList.add('fadeOut')
       window.setTimeout(() => {
         this.element.parentElement.removeChild(this.element)
@@ -107,6 +105,7 @@
       dom.querySelector('.lightbox__close').addEventListener('click', this.close.bind(this))
       dom.querySelector('.lightbox__next').addEventListener('click', this.next.bind(this))
       dom.querySelector('.lightbox__prev').addEventListener('click', this.prev.bind(this))
+
 
       return dom
     }

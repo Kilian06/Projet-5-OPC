@@ -1,3 +1,4 @@
+import { focusopen } from '../utils/focus.js';
 import {Lightbox} from '../utils/slider.js';
 import {sortList} from '../utils/sort.js';
 
@@ -84,6 +85,7 @@ async function initMedia() {
     likeBot.textContent = likeCount;
     displayDataMedia(listeMediaInit);
     Lightbox.init();
+    focusopen();
 
 };
 

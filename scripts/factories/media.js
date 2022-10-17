@@ -10,6 +10,8 @@ function MediaFactory(data) {
         divMedia.setAttribute('class',"vignette-media");
         const aImg = document.createElement('a');
         aImg.setAttribute('class',"lien_vignette_media");
+        aImg.setAttribute('id',id);
+
 
         if(image === undefined){
             aImg.setAttribute("href", vid + "?title="+title);

@@ -60,10 +60,16 @@
   max-width: 90vw;
   max-height: 95vh;
 }
+.lightbox__container img:focus {
+  border: solid 5px red;
+}
 
 .lightbox__container video {
   max-width: 90vw;
   max-height: 95vh;
+}
+.lightbox__container video:focus {
+  border: solid 5px red;
 }
 
 .lightbox__container {
