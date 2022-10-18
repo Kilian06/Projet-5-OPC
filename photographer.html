@@ -26,36 +26,36 @@
     
         </div>
         <div class="photographer_page_contact">
-          <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button></div>
+          <button class="contact_button" onclick="displayModal()" aria-label="Contact Me" id="openModalId">Contactez-moi</button></div>
       </div>
     </main>
     <div class="bground" id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <button class="closemodalbtn" onclick="closeModal()" id="closeModalContact" tabindex="2" onblur="resetmodalloop()"><img src="assets/icons/close.svg" alt="close contact form"  /></button>
         </header>
 				<form 
         id="contactForm"
         onsubmit="return send(event);"
         >
 					<div>
-						<label>Prénom</label>
-						<input type="text" id="prenom" minlength="2"/>
+						<label for="prenom">Prénom</label>
+						<input type="text" id="prenom" minlength="2" name="First Name"/>
 					</div>
           <div>
-						<label>Nom</label>
-						<input type="text" id="nom" minlength="2"/>
+						<label for="nom">Nom</label>
+						<input type="text" id="nom" minlength="2" name="Last Name"/>
 					</div>
           <div>
-						<label>Email</label>
-						<input type="text" id="email" minlength="2" />
+						<label for="email">Email</label>
+						<input type="text" id="email" minlength="2" name="email"/>
 					</div>
           <div>
-						<label>Votre message</label>
-						<input type="text" id="msg"/>
+						<label for="msg">Votre message</label>
+						<textarea type="text" id="msg" name="your message"></textarea>
 					</div>
-          <input type="submit" class="contact_button"></button>
+          <button type="submit" class="contact_button" onblur="modalloop()" aria-label="Send">Envoyer</button>
 				</form>
 			</div>
     </div>
@@ -66,7 +66,7 @@
       Trier Par
       <div class="custom-select">
 
-        <select id="mediasort" name="tirermedia">
+        <select id="mediasort" name="tirermedia" aria-label="Order by">
           <option value="title" class="select-dropdown__list-item" selected>Titre</option>
           <option value="likes" class="select-dropdown__list-item">Popularité</option>
           <option value="date" class="select-dropdown__list-item">Date</option>
@@ -85,6 +85,13 @@
     <script src="scripts/utils/sort.js" type="module" ></script>
     <script src="scripts/utils/select.js" type="module" ></script>
     <script src="scripts/utils/focus.js" type="module" defer></script>
+    <!-- <script>
+            function resetlightboxfocus(){
+        var closeBtn = document.querySelector(".lightbox__close")
+        var capture = document.getElementById("idImage")
+        capture.focus()
+      }
+    </script> -->
 
 
   </body>

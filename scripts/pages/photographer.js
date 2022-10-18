@@ -1,4 +1,5 @@
 import { focusopen } from '../utils/focus.js';
+
 import {Lightbox} from '../utils/slider.js';
 import {sortList} from '../utils/sort.js';
 
