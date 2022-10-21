@@ -66,12 +66,13 @@
       e.preventDefault()
       var focusgrille = document.getElementById(idOpen)
       console.log(focusgrille)
-      focusgrille.focus()
       console.log(idOpen)
       this.element.classList.add('fadeOut')
-      window.setTimeout(() => {
-        this.element.parentElement.removeChild(this.element)
-      }, 100)
+      this.element.parentElement.removeChild(this.element)
+      
+      // window.setTimeout(() => {
+      //   this.element.parentElement.removeChild(this.element)
+      // }, 100)
       document.removeEventListener('keyup', this.onKeyUp)
       var header = document.querySelector('header')
       header.setAttribute("aria-hidden", "false");
@@ -83,6 +84,8 @@
       shortby.setAttribute("aria-hidden", "false");
       var linklist = document.querySelector('.grille_media')
       linklist.setAttribute("aria-hidden", "false");
+      focusgrille.focus()
+
 
     }
 
@@ -107,7 +110,7 @@
     buildDOM(url) {
       const dom = document.createElement('div')
       dom.classList.add('lightbox')
-      dom.innerHTML = `<button class="lightbox__close" aria-label="Close dialog" tabindex="4" ></button>
+      dom.innerHTML = `<button class="lightbox__close" aria-label="Close dialog" tabindex="4" onblur="resetlightboxfocus()"></button>
           <button class="lightbox__next" aria-label="Next Image" tabindex="3"></button>
           <button class="lightbox__prev" aria-label="Previous Image" tabindex="2"></button>
           <div class="lightbox__container" alt="image closeup view" id="lightboxContainer" tabindex="1"></div>`
