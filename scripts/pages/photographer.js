@@ -1,3 +1,5 @@
+import { focusopen } from '../utils/focus.js';
+
 import {Lightbox} from '../utils/slider.js';
 import {sortList} from '../utils/sort.js';
 
@@ -72,6 +74,7 @@ async function initMedia() {
     // Récupère les datas des photographes
     document.getElementById("mediaList").innerHTML = ""
     const listeMediaInit = await getMediaPhotographers();
+    console.log(listeMediaInit)
     const listeMediaInitSort =  sortList(listeMediaInit);
     let likeCount = 0;
     for(let i = 0; i < listeMediaInit.length; i++) {
@@ -83,12 +86,15 @@ async function initMedia() {
     likeBot.textContent = likeCount;
     displayDataMedia(listeMediaInit);
     Lightbox.init();
-
+    focusopen();
 
 };
 
-
+//ecoute du select pour le tri
 document.getElementById("mediasort").addEventListener('change', initMedia)
+
+//gestion du focus LightBox
+
 
 
 initMedia();
@@ -96,5 +102,8 @@ initMedia();
 
 export {getMediaPhotographers}
 export {initMedia}
+
+
+
 
 

@@ -60,11 +60,17 @@
 .lightbox__container img{
     max-width: 90vw;
     max-height: 95vh;
+    &:focus{
+        border: solid 5px red;
+    }
 }
 
 .lightbox__container video{
     max-width: 90vw;
     max-height: 95vh;
+    &:focus{
+        border: solid 5px red;
+    }
 }
 
 .lightbox__container{
@@ -75,7 +81,6 @@
     justify-content: center;
     min-height: 100vh;
     flex-direction: column;
-    
 }
 
 .lightbox_title{
