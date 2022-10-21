@@ -14,13 +14,11 @@ function focusopen(){
         shortby.setAttribute("aria-hidden", "true");
         var linklist = document.querySelector('.grille_media')
         linklist.setAttribute("aria-hidden", "true");
-
         window.idOpen = link.id
         e.preventDefault()
         console.log("focus img")   
         var capture = document.getElementById("idImage")
         capture.focus()
-
         })
     )
 }
