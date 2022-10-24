@@ -69,10 +69,6 @@
       console.log(idOpen)
       this.element.classList.add('fadeOut')
       this.element.parentElement.removeChild(this.element)
-      
-      // window.setTimeout(() => {
-      //   this.element.parentElement.removeChild(this.element)
-      // }, 100)
       document.removeEventListener('keyup', this.onKeyUp)
       var header = document.querySelector('header')
       header.setAttribute("aria-hidden", "false");
