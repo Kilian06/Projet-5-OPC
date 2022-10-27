@@ -1,4 +1,4 @@
-import{getMediaPhotographers} from '../pages/photographer.js';
+// import{getMediaPhotographers} from '../pages/photographer.js';
 
 
 
