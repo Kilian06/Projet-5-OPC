@@ -1,3 +1,4 @@
+// Factorie de la page d'acceuil
 function photographerFactory(data) {
     const { name, id, city, country, tagline, price, portrait} = data;
 
@@ -35,7 +36,7 @@ function photographerFactory(data) {
 
 }
 
-
+// Factorie du Header
 function photographerFactoryPage(data) {
 
     const { name, id, city, country, tagline, price, portrait} = data;

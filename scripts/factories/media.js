@@ -1,4 +1,4 @@
-
+// Factorie des medias du photographe
 function MediaFactory(data) {
     const {id, photographerId, image, video, title, likes, date ,price } = data;
 
@@ -12,7 +12,7 @@ function MediaFactory(data) {
         aImg.setAttribute('class',"lien_vignette_media");
         aImg.setAttribute('id',id);
 
-
+// Gestion de l'image ou video
         if(image === undefined){
             aImg.setAttribute("href", vid + "?title="+title);
             const vidMedia = document.createElement( 'video' );
@@ -41,6 +41,7 @@ function MediaFactory(data) {
         likeMedia.textContent = likes;
         const heart = document.createElement('i');
         heart.setAttribute('class',"fa-solid fa-heart")
+        heart.setAttribute('aria-label',"like")
         divMedia.appendChild(divMediaBot);
         divMediaBot.appendChild(titleMedia);
         divMediaBot.appendChild(likeDiv)

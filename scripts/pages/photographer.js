@@ -1,15 +1,15 @@
+// Import des différentes fonctions
 import { focusopen } from '../utils/focus.js';
-
 import {Lightbox} from '../utils/slider.js';
 import {sortList} from '../utils/sort.js';
 
-
+// Récupération de l'ID du photographe passé en parametre
 var lien = window.location.search
 var url = new URLSearchParams(lien);
-var quelestlid = url.get('id');
+var quelEstlId = url.get('id');
 
-///// Récupération des infos du photographe
 
+// Récupération des infos du photographe en fonction de l'id passé en parametre
 async function getPhotographers() {
     return fetch(`./data/photographers.json`)
     .then(dataPhotographers => dataPhotographers.json())
@@ -17,7 +17,7 @@ async function getPhotographers() {
         var listPhotographer = dataPhotographersJson.photographers;
         var photographHeader = listPhotographer.filter(
                           function(listPhotographer) {
-                            return listPhotographer.id == quelestlid
+                            return listPhotographer.id == quelEstlId
                           }
                         )
         return photographHeader;
@@ -39,13 +39,12 @@ async function init() {
     displayData(listePhotographersInit);
 };
 
-
+// Initialisation du header au chargement de la page
 init();
 
 
 
-///// Récupération de la liste des medias
-
+//Récupération de la liste des medias du photograph
 async function getMediaPhotographers() {
     return fetch(`./data/photographers.json`)
     .then(dataPhotographers => dataPhotographers.json())
@@ -53,13 +52,13 @@ async function getMediaPhotographers() {
         var listMedia = dataPhotographersJson.media;
         var MediaPhotographer = listMedia.filter(
             function(listMedia) {
-              return listMedia.photographerId == quelestlid
+              return listMedia.photographerId == quelEstlId
             }
           )
 return MediaPhotographer;
     })
 }
-
+// Affichage des medias
 async function displayDataMedia(media) {
     const photographerList = document.getElementById("mediaList");
     media.forEach((media) => {
@@ -71,7 +70,7 @@ async function displayDataMedia(media) {
 };
 
 async function initMedia() {
-    // Récupère les datas des photographes
+    // Récupère les media du photographe
     document.getElementById("mediaList").innerHTML = ""
     const listeMediaInit = await getMediaPhotographers();
     console.log(listeMediaInit)
@@ -90,11 +89,8 @@ async function initMedia() {
 
 };
 
-//ecoute du select pour le tri
+//ecoute du select pour le tri en cas de changement rechargement de la parti media
 document.getElementById("mediasort").addEventListener('change', initMedia)
-
-//gestion du focus LightBox
-
 
 
 initMedia();

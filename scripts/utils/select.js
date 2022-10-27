@@ -1,5 +1,8 @@
-/* Video Explanatio - https://youtu.be/-0VuZEYIYuI */
+// Gestion de la zone de selection dropdow
+
+// Selection des select qui ont le style
 document.querySelectorAll('.custom-select').forEach(setupSelector);
+
 
 function setupSelector(selector) {
   selector.addEventListener('change', e => {
