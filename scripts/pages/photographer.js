@@ -73,7 +73,6 @@ async function initMedia() {
     // Récupère les media du photographe
     document.getElementById("mediaList").innerHTML = ""
     const listeMediaInit = await getMediaPhotographers();
-    console.log(listeMediaInit)
     const listeMediaInitSort =  sortList(listeMediaInit);
     let likeCount = 0;
     for(let i = 0; i < listeMediaInit.length; i++) {

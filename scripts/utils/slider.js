@@ -65,8 +65,6 @@
     close (e) {
       e.preventDefault()
       var focusgrille = document.getElementById(idOpen)
-      console.log(focusgrille)
-      console.log(idOpen)
       this.element.classList.add('fadeOut')
       this.element.parentElement.removeChild(this.element)
       document.removeEventListener('keyup', this.onKeyUp)
