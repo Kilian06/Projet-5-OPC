@@ -6,6 +6,8 @@ function MediaFactory(data) {
     const vid = `assets/images/${video}`;
 
     function MediaCardDOM() {
+        const divVignette = document.createElement('div')
+
         const divMedia = document.createElement('div');
         divMedia.setAttribute('class',"vignette-media");
         const aImg = document.createElement('a');
@@ -20,6 +22,7 @@ function MediaFactory(data) {
             vidMedia.setAttribute("alt", title + ", closeup view");
             aImg.appendChild(divMedia);
             divMedia.appendChild(vidMedia);
+            
         }else{
             aImg.setAttribute("href", picture + "?title="+title);
             const imgMedia = document.createElement( 'img' );
@@ -29,6 +32,7 @@ function MediaFactory(data) {
             divMedia.appendChild(imgMedia);
 
         }
+        divVignette.appendChild(aImg)
         const divMediaBot = document.createElement('div')
         divMediaBot.setAttribute('class',"vignette-media-bot")
         const titleMedia = document.createElement( 'div' );
@@ -42,13 +46,13 @@ function MediaFactory(data) {
         const heart = document.createElement('i');
         heart.setAttribute('class',"fa-solid fa-heart")
         heart.setAttribute('aria-label',"like")
-        divMedia.appendChild(divMediaBot);
+        divVignette.appendChild(divMediaBot);
         divMediaBot.appendChild(titleMedia);
         divMediaBot.appendChild(likeDiv)
         likeDiv.appendChild(likeMedia);
         likeDiv.appendChild(heart);
 
-        return (aImg);
+        return (divVignette);
     }
     return {id, photographerId,image, video, vid, title, likes, date ,price, MediaCardDOM }
 

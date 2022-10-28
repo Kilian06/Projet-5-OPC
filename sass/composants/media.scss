@@ -22,3 +22,11 @@
 .lien_vignette_media{
     text-decoration: none;
 }
+
+.vignette-likediv{
+    cursor:pointer;
+    color: black;
+    & i{
+color: #901C1C;
+    }
+}

@@ -2,6 +2,7 @@
 import { focusopen } from '../utils/focus.js';
 import {Lightbox} from '../utils/slider.js';
 import {sortList} from '../utils/sort.js';
+import {addLike} from '../utils/like.js';
 
 // Récupération de l'ID du photographe passé en parametre
 var lien = window.location.search
@@ -85,6 +86,9 @@ async function initMedia() {
     displayDataMedia(listeMediaInit);
     Lightbox.init();
     focusopen();
+    document.querySelectorAll(".vignette-likediv").forEach(heart => 
+        heart.addEventListener("click",addLike)
+      )
 
 };
 

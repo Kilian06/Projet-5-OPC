@@ -114,6 +114,14 @@
   text-decoration: none;
 }
 
+.vignette-likediv {
+  cursor: pointer;
+  color: black;
+}
+.vignette-likediv i {
+  color: #901C1C;
+}
+
 .custom-select {
   position: relative;
   display: inline-block;
