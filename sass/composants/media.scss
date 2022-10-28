@@ -23,10 +23,15 @@
     text-decoration: none;
 }
 
-.vignette-likediv{
+.vignette-likediv, .deductvignette-likedivplus  {
     cursor:pointer;
     color: black;
+    width: 60px;
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
     & i{
 color: #901C1C;
     }
 }
+

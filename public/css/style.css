@@ -114,11 +114,15 @@
   text-decoration: none;
 }
 
-.vignette-likediv {
+.vignette-likediv, .deductvignette-likedivplus {
   cursor: pointer;
   color: black;
+  width: 60px;
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
 }
-.vignette-likediv i {
+.vignette-likediv i, .deductvignette-likedivplus i {
   color: #901C1C;
 }
 
@@ -188,12 +192,6 @@
 
 .custom-select .selector-options li:hover {
   background: #D3573C;
-}
-
-.vignette-likediv {
-  display: flex;
-  width: 60px;
-  justify-content: space-between;
 }
 
 .vignette-media-bot {

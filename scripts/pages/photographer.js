@@ -88,7 +88,9 @@ async function initMedia() {
     focusopen();
     document.querySelectorAll(".vignette-likediv").forEach(heart => 
         heart.addEventListener("click",addLike)
-      )
+    )
+
+    
 
 };
 
