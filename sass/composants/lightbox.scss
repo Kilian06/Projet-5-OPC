@@ -17,7 +17,7 @@
 
 .lightbox__next, .lightbox__prev{
     border: none;
-    background: url(/assets/icons/arrow.svg) center center / 100% no-repeat;
+    background: url(./assets/icons/arrow.svg) center center / 100% no-repeat;
     width: 42px;
     height: 100%;
     position: fixed;
@@ -43,7 +43,7 @@
 .lightbox__close{
     width: 42px;
     height: 42px;
-    background: url(/assets/icons/close.svg) center center/ 42px no-repeat transparent;
+    background: url(./assets/icons/close.svg) center center/ 42px no-repeat transparent;
     border: none;
     opacity: 0.9;
     text-indent: -3000px;
